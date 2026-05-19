@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Updated code for PNG favicon -->
+    <link rel="icon" type="image/png" href="public/Gemini_Generated_Image_l0lirbl0lirbl0li.png">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body{
+    background:lightgrey;
+    height:100vh;
+    color: black;
+
+}
+.a {
+    background-color: wheat;
+     background-image: url(public/Gemini_Generated_Image_ltg2ftltg2ftltg2.png);
+}
+.b {
+    color:rgb(170, 101, 12);
+}
+header{
+    color: azure;
+}
+footer{
+    text-align: center;
+    background-color: black;
+    background-image: url(public/Gemini_Generated_Image_ltg2ftltg2ftltg2.png);
+    color: beige;
+}
+a {
+    color: aquamarine;
+}
+
+button{
+    background-size: auto;
+    text-align: center;
+}
+
+.nides{
+    background-color:blue;
+}
+/* Container that holds both buttons in a row */
+.button-row {
+  display: flex;         /* Puts items on the same line */
+  gap: 15px;             /* Creates a gap between the two buttons */
+  width: 100%;           /* Pulls container to full width (or set a specific max-width like 400px) */
+  max-width: 500px;      
+}
+
+/* Buttons that automatically match sizes */
+.nides {
+  flex: 1;               /* CRITICAL: Forces both buttons to grow and split the space 50/50 equally */
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Visual styling to tell them apart */
+.nides:first-child {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.nides:last-child {
+  background-color: #28a745;
+  color: white;
+}
+/* Container layout */
+.button-slot {
+  display: flex;
+  width: 100%;
+  padding: 10px 0;
+}
+
+/* Alignment Controls */
+.align-left {
+  justify-content: flex-start; /* Pushes button to the left */
+}
+
+.align-right {
+  justify-content: flex-end;   /* Pushes button to the right */
+}
+
+/* Base button style */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.btn-primary { background-color: #007bff; color: white; }
+
+/* Container for Select Mode */
+.select-mode-bar {
+  display: flex;
+  align-items: center; /* Keeps text and buttons perfectly level vertically */
+  gap: 20px;           /* Space between the counter text and the buttons */
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Keeps the buttons grouped closely together */
+.action-group {
+  display: flex;
+  gap: 10px; 
+}
+
+/* Alignment Controls (Reusing or mapping layout direction) */
+.select-mode-bar.align-left {
+  justify-content: flex-start; /* Everything sits on the left */
+}
+
+/* Note: If you want the text on the left but the buttons pushed to the right,
+   use flex-direction or a margin trick instead: */
+.select-mode-bar.align-right {
+  justify-content: flex-end;   /* Everything sits on the right */
+}
+
+/* Text & Button styles */
+.select-count {
+  font-weight: bold;
+  color: #495057;
+}
+.btn-secondary { background-color: #6c757d; color: white; }
+.btn-danger { background-color: #dc3545; color: white; }
+.select-count {
+  margin-right: auto; /* This acts like an invisible spring, pushing the buttons to the far right! */
+}
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+      
+        /* Content styling */
+        .content {
+            position: relative;
+            z-index: 1; /* Keeps content above the video */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        .body{ background-color: #141414; color: #fff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding: 40px 2%; overflow-x: hidden; }
+        h2 { font-size: 1.4vw; color: #e5e5e5; margin-bottom: 10px; font-weight: 500; }
+        .doc-row { display: flex; gap: 8px; overflow-x: auto; padding: 15px 0; scroll-behavior: smooth; }
+        .doc-row::-webkit-scrollbar { display: none; } /* Hides scrollbar for clean Netflix look */
+        
+        /* Turned into a clickable block element */
+        .doc-card { min-width: 19%; aspect-ratio: 16 / 9; background: #181818; border-radius: 4px; overflow: hidden; position: relative; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid #333; display: flex; flex-direction: column; justify-content: space-between; padding: 15px; text-decoration: none; color: inherit; }
+        .doc-card:hover { transform: scale(1.08); z-index: 10; box-shadow: 0px 10px 20px rgba(0,0,0,0.5); border-color: #fff; }
+        
+        .badge { align-self: flex-start; color: white; font-size: 10px; font-weight: bold; padding: 3px 6px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; }
+        .doc-title { font-size: 15px; font-weight: bold; margin-top: 10px; color: #fff; line-height: 1.2; display: -webkit-box; webkitlineclamp:2; -webkit-box-orient: vertical; overflow: hidden; }
+        .doc-meta { display: flex; align-items: center; gap: 10px; font-size: 12px; color: #46d369; font-weight: 600; margin-top: auto; }
+        .doc-size { color: #a3a3a3; font-weight: normal; }
+        
+        /* Next Button Card Specific Styling */
+        .next-card { background: rgba(26, 26, 26, 0.6); display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px dashed #444; gap: 10px; }
+        .next-card:hover { background: #222; border-style: solid; }
+        .next-arrow { font-size: 24px; transition: transform 0.3s ease; }
+        .next-card:hover .next-arrow { transform: translateX(5px); }
+        .next-text { font-size: 14px; font-weight: bold; color: #a3a3a3; letter-spacing: 1px; text-transform: uppercase; }
+        .next-card:hover .next-text { color: #fff; }
+
+
+         .body1 { background-color: #0f172a; display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; height: 100vh; margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+
+        /* Universal Core Button Style */
+        .card-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            box-sizing: border-box;
+            letter-spacing: 0.3px;
+        }
+
+        /* 🛒 Category: Buy Now (High-conversion modern gradient) */
+        .btn-buy {
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            color: #111;
+            box-shadow: 0 4px 14px rgba(255, 78, 80, 0.3);
+        }
+        .btn-buy:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 78, 80, 0.5);
+            filter: brightness(1.05);
+        }
+
+        /* 👁️ Category: Preview (Glassmorphism outline) */
+        .btn-preview {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #f8fafc;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+        }
+        .btn-preview:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-1px);
+        }
+
+        /* 📥 Category: Download Sample (Sleek minimalist dark mode) */
+        .btn-download {
+            background-color: #38bdf8;
+            color: #0f172a;
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+        }
+        .btn-download:hover {
+            background-color: #0ea5e9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(14, 165, 233, 0.4);
+        }
+
+        /* 📑 Category: Learn More (Minimalist textual text link style) */
+        .btn-learn {
+            background-color: transparent;
+            color: #94a3b8;
+            padding: 12px 16px;
+            position: relative;
+        }
+        .btn-learn::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+            right: 16px;
+            height: 2px;
+            background-color: #38bdf8;
+            transform: scaleX(0);
+            transition: transform 0.2s ease;
+        }
+        .btn-learn:hover {
+            color: #f8fafc;
+        }
+        .btn-learn:hover::after {
+            transform: scaleX(1);
+        }
+
+        .body2{
+          background-color: #007bff;
+          color: #111;
+          text-align: center;
+        }
+    </style>    
+    <title>GER - STORE</title>
+    <link rel="icon" type="image/png" href="public/Gemini_Generated_Image_l0lirbl0lirbl0li.png">
+</head>
+<body>
+        <div>
+    <header class="header">
+<p class="b">
+
+
+<!-- RIGHT ALIGNED -->
+<div class="button-slot align-right">
+  <button class="btn btn-primary">choose options</button>
+</div>
+
+
+<!-- SELECT MODE: LEFT ALIGNED -->
+<div class="select-mode-bar align-left">
+  <span class="select-count">start here____<span>🚀</span><span>🚀</span><span>🚀</span><span>🚀</span><span>🚀</span>
+  </span>
+  <div class="action-group">
+    <a href="../loginpage/stripe login.html"><button class="btn btn-secondary">login</button></a>
+    <a href="../loginpage/stripe login.html"><button class="btn btn-danger">sign-up</button></a>
+  </div>
+</div>
+
+
+
+
+</p>
+<br>
+    <h1 class="a" style="color:azure"><center><b>GER_STORE.com<b></center></h1>
+        <br>
+    
+    </header>
+
+    <p><i><margin>welcome to GER_STORE.com a site of creativity and innnovation . while you are here remember to explore defferent libraries for different text books and <span style="color: blue;">just get lates</margin></span></i></p><br>
+    <video width="1200" height="400" controls muted loop poster="public/Gemini_Generated_Image_l0lirbl0lirbl0li.png">
+        <source src="videos/9486-220088143_medium.mp4" type="video/mp4">
+    </video>
+
+    <div>
+        <!-- The Structure -->
+<div>
+    <marquee direction="left"><p><h2>Discover thousands of high-quality PDF books for programming, business, design, marketing, and personal growth. Buy and download eBooks instantly from anywhere in the world. Premium digital books crafted for learners, developers, entrepreneurs, and students.
+    </h2></p></marquee>
+</div>
+
+<div class="body">
+
+
+    <h2 style="color:#2563eb;">Featured eBooks <span>🚀</span><span>🚀</span></h2><br>
+    <h2>Web Development</h2><br>
+
+     <div class="doc-row">
+        
+        <!-- EDIT DOCUMENT 1 -->
+        <!-- Replace href="#" with your file path (e.g., href="documents/report.pdf") -->
+        <a href="documents/webdev/Web Programming with HTML5, CSS, and JavaScript.pdf" class="doc-card">
+            <span class="badge" style="background: #2563eb;">PDF</span>
+            <div class="doc-title">Web Programming with HTML5, CSS, and JavaScript.pdf</div>
+            <div class="doc-meta">98% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 2 -->
+        <!-- Or paste a web URL (e.g., href="https://drive.google.com/.../view") -->
+        <a href="documents/webdev/Web Technologies.pdf" class="doc-card">
+            <span class="badge" style="background: #10b981;">PDF</span>
+            <div class="doc-title">Web Technologies</div>
+            <div class="doc-meta">95% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 3 -->
+        <a href="documents/webdev/web-developer.pdf" class="doc-card">
+            <span class="badge" style="background: #7c3aed;">PDF</span>
+            <div class="doc-title">web-developer</div>
+            <div class="doc-meta">New <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 4 -->
+        <a href="documents/webdev/Web_Development_with_Node_Express.pdf" class="doc-card">
+            <span class="badge" style="background: #f59e0b;">PDF</span>
+            <div class="doc-title">Web_Development_with_Node_Express</div>
+            <div class="doc-meta">92% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 5 -->
+        <a href="documents/webdev/webdev-tutorial.pdf" class="doc-card">
+            <span class="badge" style="background: #2563eb;">PDF</span>
+            <div class="doc-title">webdev-tutorial</div>
+            <div class="doc-meta">Top 10 <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT FULL LIBRARY LINK -->
+        <!-- Replace href="full-library.html" with your main library destination -->
+        <a href="../full-library/full-library.html" class="doc-card next-card">
+            <div class="next-arrow">➔</div>
+            <div class="next-text">See All Books</div>
+        </a>
+        
+    </div>
+    <h2>UI/UX Design</h2><br>
+
+     <div class="doc-row">
+        
+        <!-- EDIT DOCUMENT 1 -->
+        <!-- Replace href="#" with your file path (e.g., href="documents/report.pdf") -->
+        <a href="documents/userinterface/fundamental ui.pdf" class="doc-card">
+            <span class="badge" style="background: #2563eb;">PDF</span>
+            <div class="doc-title">fundamental ui</div>
+            <div class="doc-meta">98% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 2 -->
+        <!-- Or paste a web URL (e.g., href="https://drive.google.com/.../view") -->
+        <a href="documents/userinterface/Portfolio_Albertus.pdf" class="doc-card">
+            <span class="badge" style="background: #10b981;">PDF</span>
+            <div class="doc-title">Portfolio_Albertus</div>
+            <div class="doc-meta">95% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 3 -->
+        <a href="documents/userinterface/UI Design Principles - Michael Filipiuk.pdf" class="doc-card">
+            <span class="badge" style="background: #7c3aed;">PDF</span>
+            <div class="doc-title">UI Design Principles - Michael Filipiuk</div>
+            <div class="doc-meta">New <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 4 -->
+        <a href="documents/userinterface/UX_UI_Design_Process_Steps-Profil_Software.pdf" class="doc-card">
+            <span class="badge" style="background: #f59e0b;">PDF</span>
+            <div class="doc-title">UX_UI_Design_Process_Steps-Profil_Software</div>
+            <div class="doc-meta">92% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 5 -->
+        <a href="documents/userinterface/wiley_the_essential_guide_to_user_interf.pdf" class="doc-card">
+            <span class="badge" style="background: #2563eb;">PDF</span>
+            <div class="doc-title">wiley_the_essential_guide_to_user_interf</div>
+            <div class="doc-meta">Top 10 <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT FULL LIBRARY LINK -->
+        <!-- Replace href="full-library.html" with your main library destination -->
+        <a href="full-library.html" class="doc-card next-card">
+            <div class="next-arrow">➔</div>
+            <div class="next-text">See All Books</div>
+        </a>
+        
+    </div>
+    <h2>linux</h2><br>
+
+     <div class="doc-row">
+        
+        <!-- EDIT DOCUMENT 1 -->
+        <!-- Replace href="#" with your file path (e.g., href="documents/report.pdf") -->
+        <a href="documents/ linux1/all in one linux.pdf" class="doc-card">
+            <span class="badge" style="background: #2563eb;">PDF</span>
+            <div class="doc-title">all in one linux</div>
+            <div class="doc-meta">98% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 2 -->
+        <!-- Or paste a web URL (e.g., href="https://drive.google.com/.../view") -->
+        <a href="documents/ linux1/How-Linux-Works-What-Every-Superuser-Should-Know.pdf" class="doc-card">
+            <span class="badge" style="background: #10b981;">PDF</span>
+            <div class="doc-title">How-Linux-Works-What-Every-Superuser-Should-Know</div>
+            <div class="doc-meta">95% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 3 -->
+        <a href="documents/ linux1/KaliLinux2AssuringSecuritybyPenetrationTesting_thirdEdition_ColorImages.pdf" class="doc-card">
+            <span class="badge" style="background: #7c3aed;">PDF</span>
+            <div class="doc-title">KaliLinux2AssuringSecuritybyPenetrationTesting_thirdEdition_ColorImages</div>
+            <div class="doc-meta">New <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 4 -->
+        <a href="documents/ linux1/learningkalilinux.pdf" class="doc-card">
+            <span class="badge" style="background: #f59e0b;">PDF</span>
+            <div class="doc-title">learningkalilinux</div>
+            <div class="doc-meta">92% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 5 -->
+        <a href="documents/ linux1/Linux.pdf" class="doc-card">
+            <span class="badge" style="background: #2563eb;">PDF</span>
+            <div class="doc-title">Linux</div>
+            <div class="doc-meta">Top 10 <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT FULL LIBRARY LINK -->
+        <!-- Replace href="full-library.html" with your main library destination -->
+        <a href="full-library.html" class="doc-card next-card">
+            <div class="next-arrow">➔</div>
+            <div class="next-text">See All Books</div>
+        </a>
+        
+    </div>
+    <h2>React Native</h2><br>
+
+     <div class="doc-row">
+        
+        <!-- EDIT DOCUMENT 1 -->
+        <!-- Replace href="#" with your file path (e.g., href="documents/report.pdf") -->
+        <a href="documents/react-native/FULLTEXT01-react.pdf" class="doc-card">
+            <span class="badge" style="background: #2563eb;">PDF</span>
+            <div class="doc-title">FULLTEXT01-react</div>
+            <div class="doc-meta">98% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 2 -->
+        <!-- Or paste a web URL (e.g., href="https://drive.google.com/.../view") -->
+        <a href="documents/react-native/Learning React Native_ Building Native Mobile Apps with JavaScript - Bonnie Eisenman - O'Reilly Media (2017).pdf" class="doc-card">
+            <span class="badge" style="background: #10b981;">PDF</span>
+            <div class="doc-title">Learning React Native_ Building Native Mobile Apps with JavaScript - Bonnie Eisenman - O'Reilly Media (2017)</div>
+            <div class="doc-meta">95% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 3 -->
+        <a href="documents/react-native/Learning-React-Native.pdf" class="doc-card">
+            <span class="badge" style="background: #7c3aed;">PDF</span>
+            <div class="doc-title">Learning-React-Native</div>
+            <div class="doc-meta">New <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 4 -->
+        <a href="documents/react-native/mastering react.pdf" class="doc-card">
+            <span class="badge" style="background: #f59e0b;">PDF</span>
+            <div class="doc-title">mastering react</div>
+            <div class="doc-meta">92% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 5 -->
+        <a href="documents/react-native/React Native in Action.pdf" class="doc-card">
+            <span class="badge" style="background: #2563eb;">PDF</span>
+            <div class="doc-title">React Native in Action</div>
+            <div class="doc-meta">Top 10 <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT FULL LIBRARY LINK -->
+        <!-- Replace href="full-library.html" with your main library destination -->
+        <a href="full-library.html" class="doc-card next-card">
+            <div class="next-arrow">➔</div>
+            <div class="next-text">See All Books</div>
+        </a>
+        
+    </div>
+    <h2>Python</h2><br>
+
+     <div class="doc-row">
+        
+        <!-- EDIT DOCUMENT 1 -->
+        <!-- Replace href="#" with your file path (e.g., href="documents/report.pdf") -->
+        <a href="documents/python/aipython.pdf" class="doc-card">
+            <span class="badge" style="background: #2563eb;">PDF</span>
+            <div class="doc-title">ai python</div>
+            <div class="doc-meta">98% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 2 -->
+        <!-- Or paste a web URL (e.g., href="https://drive.google.com/.../view") -->
+        <a href="documents/python/Automate the Boring Stuff with Python.pdf" class="doc-card">
+            <span class="badge" style="background: #10b981;">PDF</span>
+            <div class="doc-title">Automate the Boring Stuff with Python</div>
+            <div class="doc-meta">95% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 3 -->
+        <a href="documents/python/BigBookSmallPythonProjects.pdf" class="doc-card">
+            <span class="badge" style="background: #7c3aed;">PDF</span>
+            <div class="doc-title">BigBookSmallPythonProjects</div>
+            <div class="doc-meta">New <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 4 -->
+        <a href="documents/python/blackhatpython.pdf" class="doc-card">
+            <span class="badge" style="background: #f59e0b;">PDF</span>
+            <div class="doc-title">blackhatpython</div>
+            <div class="doc-meta">92% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 5 -->
+        <a href="documents/python/Computer science PYTHON book pdf for class 12.pdf" class="doc-card">
+            <span class="badge" style="background: #2563eb;">PDF</span>
+            <div class="doc-title">Computer science PYTHON book pdf for class 12</div>
+            <div class="doc-meta">Top 10 <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT FULL LIBRARY LINK -->
+        <!-- Replace href="full-library.html" with your main library destination -->
+        <a href="full-library.html" class="doc-card next-card">
+            <div class="next-arrow">➔</div>
+            <div class="next-text">See All Books</div>
+        </a>
+        
+    </div>
+    <h2>Business</h2><br>
+
+     <div class="doc-row">
+        
+        <!-- EDIT DOCUMENT 1 -->
+        <!-- Replace href="#" with your file path (e.g., href="documents/report.pdf") -->
+        <a href="documents/busness/7140BUSINESS STRATEGY FULL final 2021.pdf" class="doc-card">
+            <span class="badge" style="background: #2563eb;">PDF</span>
+            <div class="doc-title">7140BUSINESS STRATEGY FULL final 2021</div>
+            <div class="doc-meta">98% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 2 -->
+        <!-- Or paste a web URL (e.g., href="https://drive.google.com/.../view") -->
+        <a href="documents/busness/99-Business-Ideas-eBook.pdf" class="doc-card">
+            <span class="badge" style="background: #10b981;">PDF</span>
+            <div class="doc-title">99-Business-Ideas-eBook</div>
+            <div class="doc-meta">95% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 3 -->
+        <a href="documents/busness/a-practical-guide-to-building-agents.pdf" class="doc-card">
+            <span class="badge" style="background: #7c3aed;">PDF</span>
+            <div class="doc-title">a-practical-guide-to-building-agents</div>
+            <div class="doc-meta">New <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 4 -->
+        <a href="documents/busness/an-introduction-to-business-v2.0.pdf" class="doc-card">
+            <span class="badge" style="background: #f59e0b;">PDF</span>
+            <div class="doc-title">an-introduction-to-business-v2.0</div>
+            <div class="doc-meta">92% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 5 -->
+        <a href="documents/busness/Book-1-Business-Fundamentals.pdf" class="doc-card">
+            <span class="badge" style="background: #2563eb;">PDF</span>
+            <div class="doc-title">Book-1-Business-Fundamentals</div>
+            <div class="doc-meta">Top 10 <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT FULL LIBRARY LINK -->
+        <!-- Replace href="full-library.html" with your main library destination -->
+        <a href="../full-library/full-library.html" class="doc-card next-card">
+            <div class="next-arrow">➔</div>
+            <div class="next-text">See All Books</div>
+        </a>
+        
+    </div>
+    <h2>marketing</h2><br>
+
+     <div class="doc-row">
+        
+        <!-- EDIT DOCUMENT 1 -->
+        <!-- Replace href="#" with your file path (e.g., href="documents/report.pdf") -->
+        <a href="documents/marketing/0527Beginner's Manual on Digital Marketing and E-Commerce_web.pdf" class="doc-card">
+            <span class="badge" style="background: #2563eb;">PDF</span>
+            <div class="doc-title">0527Beginner's Manual on Digital Marketing and E-Commerce_web</div>
+            <div class="doc-meta">98% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 2 -->
+        <!-- Or paste a web URL (e.g., href="https://drive.google.com/.../view") -->
+        <a href="documents/marketing/1666787488kotler_keller_-_marketing_management_14th_edition.pdf" class="doc-card">
+            <span class="badge" style="background: #10b981;">PDF</span>
+            <div class="doc-title">1666787488kotler_keller_-_marketing_management_14th_edition</div>
+            <div class="doc-meta">95% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 3 -->
+        <a href="documents/marketing/1666851292strategic-marketing.pdf" class="doc-card">
+            <span class="badge" style="background: #7c3aed;">PDF</span>
+            <div class="doc-title">1666851292strategic-marketing</div>
+            <div class="doc-meta">New <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 4 -->
+        <a href="documents/marketing/412_marketing_salesmanship-X.pdf" class="doc-card">
+            <span class="badge" style="background: #f59e0b;">PDF</span>
+            <div class="doc-title">412_marketing_salesmanship-X</div>
+            <div class="doc-meta">92% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 5 -->
+        <a href="documents/marketing/B.Com- Marketing Management 2019 Admn_0.pdf" class="doc-card">
+            <span class="badge" style="background: #2563eb;">PDF</span>
+            <div class="doc-title">B.Com- Marketing Management 2019 Admn_0</div>
+            <div class="doc-meta">Top 10 <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT FULL LIBRARY LINK -->
+        <!-- Replace href="full-library.html" with your main library destination -->
+        <a href="../full-library/full-library.html" class="doc-card next-card">
+            <div class="next-arrow">➔</div>
+            <div class="next-text">See All Books</div>
+        </a>
+        
+    </div>
+    <h2>Others</h2><br>
+
+     <div class="doc-row">
+        
+        <!-- EDIT DOCUMENT 1 -->
+        <!-- Replace href="#" with your file path (e.g., href="documents/report.pdf") -->
+        <a href="documents/others1/ Marketing Metrics.pdf" class="doc-card">
+            <span class="badge" style="background: #2563eb;">PDF</span>
+            <div class="doc-title"> Marketing Metrics</div>
+            <div class="doc-meta">98% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 2 -->
+        <!-- Or paste a web URL (e.g., href="https://drive.google.com/.../view") -->
+        <a href="documents/others1/CYBERSECURITYHANDBOOK.pdf" class="doc-card">
+            <span class="badge" style="background: #10b981;">PDF</span>
+            <div class="doc-title">CYBERSECURITYHANDBOOK</div>
+            <div class="doc-meta">95% Match <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 3 -->
+        <a href="documents/others1/finance.pdf" class="doc-card">
+            <span class="badge" style="background: #7c3aed;">PDF</span>
+            <div class="doc-title">finance</div>
+            <div class="doc-meta">New <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 4 -->
+        <a href="documents/others1/FYXXAI Strategy andRoadma.pdf" class="doc-card">
+            <span class="badge" style="background: #f59e0b;">PDF</span>
+            <div class="doc-title">FYXXAI Strategy andRoadma</div>
+            <div class="doc-meta">92% Match <span class="doc-size"> __</span></div>
+        </a>
+
+        <!-- EDIT DOCUMENT 5 -->
+        <a href="documents/others1/HUMAN RESOURCES POLICY MANUAL.pdf" class="doc-card">
+            <span class="badge" style="background: #2563eb;">PDF</span>
+            <div class="doc-title">HUMAN RESOURCES POLICY MANUAL</div>
+            <div class="doc-meta">Top 10 <span class="doc-size">__</span></div>
+        </a>
+
+        <!-- EDIT FULL LIBRARY LINK -->
+        <!-- Replace href="full-library.html" with your main library destination -->
+        <a href="../full-library/full-library.html" class="doc-card next-card">
+            <div class="next-arrow">➔</div>
+            <div class="next-text">See All Books</div>
+        </a>
+        
+    </div>
+    </div>
+    </div>
+
+
+    <div class="body1">
+
+ <!-- 1. Buy Now Button -->
+    <a href="#" class="card-btn btn-buy">Buy Now</a>
+
+    <!-- 2. Preview Button -->
+    <a href="#" class="card-btn btn-preview">Preview</a>
+
+    <!-- 3. Download Sample Button -->
+    <a href="#" class="card-btn btn-download">Download Sample</a>
+
+    <!-- 4. Learn More Button -->
+    <a href="#" class="card-btn btn-learn">Learn More →</a>
+
+
+    </div> 
+    
+    <div class="body2">
+        <h2>price label</h2><br>
+        <p>price range from minimum $9.99 ,$14.99 and maximum $24.99 depend on type of book</p><br>
+        </div>
+    <div class="botton-row">
+<a href="../loginpage/stripe login.html"><button class="nides">Get-Started -></button></a>
+    </div>  
+    
+
+    <div>
+
+
+<!-- Browse Books Button -->
+<button style="background-color: #f3f4f6; color: #1f2937; border: 1px solid #e5e7eb; padding: 12px 24px; font-size: 16px; font-weight: 500; border-radius: 8px; cursor: pointer; transition: background-color 0.2s ease; font-family: system-ui, sans-serif;">Browse Books</button>
+
+<!-- Explore Library Button -->
+<button style="background-color: transparent; color: #2563eb; border: 2px solid #2563eb; padding: 10px 22px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer; transition: all 0.2s ease; font-family: system-ui, sans-serif;">Explore Library</button>
+
+<!-- Start Reading Button -->
+<button style="background-color: #059669; color: white; border: none; padding: 12px 24px; font-size: 16px; font-weight: 600; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.2); transition: opacity 0.2s ease; font-family: system-ui, sans-serif;">Start Reading</button>
+
+<!-- Download Now Button -->
+<button style="background-color: #111827; color: white; border: none; padding: 12px 24px; font-size: 16px; font-weight: 500; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); font-family: system-ui, sans-serif;">Download Now</button>
+    </div>
+    <!--LAST PART WITH FEW SPECTS............................................................................................................................................................................................................................................................................................................................-->>
+   <div>
+    <style>
+        /* --- RESET & VARIABLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --bg-main: #0f172a;
+            --bg-secondary: #111827;
+            --primary: #6366f1;
+            --accent: #8b5cf6;
+            --text-white: #f8fafc;
+            --text-gray: #94a3b8;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --neon-glow: 0 0 20px rgba(99, 102, 241, 0.4);
+            --soft-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-white);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* --- GRADIENT BACKGROUND ORBS --- */
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            filter: blur(60px);
+        }
+        body::before { top: 15%; left: -15%; }
+        body::after { bottom: 20%; right: -15%; }
+
+        /* --- FLOATING NAVBAR --- */
+        .navbar {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            height: 70px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 32px;
+            z-index: 1000;
+            box-shadow: var(--soft-shadow);
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--text-white) 0%, var(--text-gray) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-white);
+        }
+
+        /* --- BUTTONS --- */
+        .btn-cta {
+            position: relative;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border: none;
+            border-radius: 50px;
+            color: var(--text-white);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.03);
+            box-shadow: var(--neon-glow);
+        }
+
+        .btn-cta:hover::before {
+            left: 100%;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: var(--text-white);
+            box-shadow: none;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--text-gray);
+            box-shadow: none;
+        }
+
+        /* --- GLOBAL LAYOUT CONTEXT --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-tag {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 600;
+            display: inline-block;
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: var(--text-white);
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        /* --- GENERAL CARD STRUCTURE --- */
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            box-shadow: var(--soft-shadow);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(99, 102, 241, 0.05);
+        }
+
+        /* --- WHY CHOOSE US SECTION --- */
+        .features-section {
+            padding-top: 160px;
+        }
+
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 24px;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .card-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-gray);
+        }
+
+        .card:hover .card-icon {
+            background: var(--primary);
+            color: var(--text-white);
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+            border-color: transparent;
+        }
+
+        /* --- STATISTICS SECTION --- */
+        .stats-wrap {
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            padding: 60px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item { position: relative; }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--glass-border), transparent);
+        }
+
+        .stat-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, var(--text-white) 30%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-gray);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- TESTIMONIALS SECTION --- */
+        .testimonial-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            font-family: 'Outfit', sans-serif;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: -10px;
+        }
+
+        .review-text {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--text-white);
+            font-style: italic;
+            margin-bottom: 24px;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar-placeholder {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+            border: 1px solid var(--glass-border);
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* --- PRICING SECTION --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px -15px rgba(99, 102, 241, 0.2);
+        }
+
+        .pricing-card.featured::before {
+            content: 'POPULAR';
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .plan-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .plan-features {
+            list-style: none;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .plan-features li {
+            padding: 12px 0;
+            color: var(--text-gray);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 1rem;
+        }
+
+        .pricing-card .btn-cta {
+            width: 100%;
+        }
+
+        /* --- NEWSLETTER SECTION --- */
+        .newsletter-wrap {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(17, 24, 39, 0.7) 100%);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            padding: 60px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-wrap::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .newsletter-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .newsletter-desc {
+            color: var(--text-gray);
+            max-width: 500px;
+            margin: 0 auto 32px auto;
+            line-height: 1.6;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            padding: 16px 24px;
+            border-radius: 50px;
+            color: var(--text-white);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .newsletter-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.1);
+        }
+
+        /* --- FOOTER SECTION --- */
+        footer {
+            background: #0b0f19;
+            border-top: 1px solid var(--glass-border);
+            padding: 80px 0 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .footer-column h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--text-white);
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 30px;
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */
+        @media (max-width: 992px) {
+            .stat-item:not(:last-child)::after { display: none; }
+            .section-title { font-size: 2.25rem; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 0 20px; }
+            .nav-links { display: none; }
+            .features-section { padding-top: 120px; }
+            .grid-layout, .pricing-grid { grid-template-columns: 1fr; }
+            .stats-wrap { gap: 48px; padding: 40px 20px; }
+            .stat-number { font-size: 2.75rem; }
+            .newsletter-wrap { padding: 40px 20px; }
+            .newsletter-form { flex-direction: column; border-radius: 20px; }
+            .newsletter-input { width: 100%; }
+        }
+    </style>
+    <!-- FLOATING NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">GER_STORE</div>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+        </ul>
+        <a href="../loginpage/stripe login.html"><button class="btn-cta">Get Started</button></a>
+    </nav>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why Choose Us</span>
+                <h2 class="section-title">Why Readers Choose Stripe</h2>
+            </div>
+            
+            <div class="grid-layout">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </div>
+                    <h3 class="card-title">Instant Access</h3>
+                    <p class="card-description">Get your PDF books immediately after purchase.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </div>
+                    <h3 class="card-title">Secure Payments</h3>
+                    <p class="card-description">Protected transactions with trusted payment systems.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    </div>
+                    <h3 class="card-title">Modern Learning</h3>
+                    <p class="card-description">Read on mobile, tablet, or desktop anytime.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                    <h3 class="card-title">Affordable Prices</h3>
+                    <p class="card-description">Premium knowledge at student-friendly pricing.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <h3 class="card-title">Lifetime Downloads</h3>
+                    <p class="card-description">Access your books forever after purchase.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <h3 class="card-title">Expert Authors</h3>
+                    <p class="card-description">Books created by professionals and industry experts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATISTICS SECTION -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-wrap">
+                <div class="stat-item">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">PDF Books</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50,000+</div>
+                    <div class="stat-label">Customers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">120+</div>
+                    <div class="stat-label">Authors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.9/5</div>
+                    <div class="stat-label">Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">What Readers Say</h2>
+            </div>
+            
+            <div class="grid-layout">
+                <!-- Review 1 -->
+                <div class="card testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <p class="review-text">“Stripe helped me improve my programming skills with affordable and high-quality books.”</p>
+                    <div class="reviewer-info">
+                        <div class="avatar-placeholder"></div>
+                        <div class="reviewer-name">GERSON TUMA</div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="card testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <p class="review-text">“The UI is clean and downloading books is super fast.”</p>
+                    <div class="reviewer-info">
+                        <div class="avatar-placeholder"></div>
+                        <div class="reviewer-name">GHARIB BILAL</div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="card testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <p class="review-text">“I found amazing React Native resources here.”</p>
+                    <div class="reviewer-info">
+                        <div class="avatar-placeholder"></div>
+                        <div class="reviewer-name">EMMANUEL MBEMBELA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Pricing</span>
+                <h2 class="section-title">Simple Pricing</h2>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Plan 1 -->
+                <div class="card pricing-card">
+                    <h3 class="plan-name">Starter</h3>
+                    <ul class="plan-features">
+                        <li>Access to free books</li>
+                        <li>Monthly updates</li>
+                        <li>Basic downloads</li>
+                    </ul>
+                    <button class="btn-cta btn-secondary">Start Free</button>
+                </div>
+                <!-- Plan 2 -->
+                <div class="card pricing-card featured">
+                    <h3 class="plan-name">Pro</h3>
+                    <ul class="plan-features">
+                        <li>Unlimited downloads</li>
+                        <li>Premium content</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button class="btn-cta">Upgrade Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER SECTION -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-wrap">
+                <h2 class="newsletter-title">Join Our Reading Community</h2>
+                <p class="newsletter-desc">Subscribe to receive new PDF book releases, discounts, and learning resources.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                    <button type="submit" class="btn-cta">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand" style="grid-column: span 2;">
+                    <h3>Stripe</h3>
+                    <p>Elevating digital learning through modern interfaces and premium expert-curated knowledge.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Socials</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">X/Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stripe Learning Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive script to make the Glassmorphism card sheen follow the cursor -->
+    <script>
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+
+</body>
+</html>
