@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00e5ff"/>
+      <stop offset="1" stop-color="#165dff"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101d28"/>
+      <stop offset="1" stop-color="#08121b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#05080b"/>
+
+  <!-- Terminal side -->
+  <g font-family="DejaVu Sans, monospace">
+    <text x="38" y="58" font-size="20" fill="#00e5ff">gerson@gerson-os:~$</text>
+    <text x="280" y="58" font-size="20" fill="#e6edf3">neofetch</text>
+
+    <!-- ASCII G -->
+    <text x="35" y="125" font-size="18" fill="#00e5ff" xml:space="preserve">
+      <tspan x="35" dy="0">        .::::::::::::.</tspan>
+      <tspan x="35" dy="19">     .::://++++++//::.</tspan>
+      <tspan x="35" dy="19">   .:://++        ++//::.</tspan>
+      <tspan x="35" dy="19">  :://++     GGGG    ++//:</tspan>
+      <tspan x="35" dy="19"> ://++     GG        ++//:</tspan>
+      <tspan x="35" dy="19">://++     GG   GGGG   ++//:</tspan>
+      <tspan x="35" dy="19">++//      GG    GG     //++</tspan>
+      <tspan x="35" dy="19">++//       GGGGGG      //++</tspan>
+      <tspan x="35" dy="19"> ://++                 ++//:</tspan>
+      <tspan x="35" dy="19">  :://++             ++//:</tspan>
+      <tspan x="35" dy="19">   .:://++++++++++++//::.</tspan>
+      <tspan x="35" dy="19">      .::::::::::::.</tspan>
+    </text>
+
+    <text x="38" y="390" font-size="31" font-weight="bold" fill="url(#g)">GERSON OS</text>
+    <text x="40" y="425" font-size="16" fill="#00d9ff">Freedom • Privacy • Performance</text>
+
+    <g font-size="17">
+      <text x="410" y="145" fill="#00e5ff" font-weight="bold">gerson@gerson-os</text>
+      <text x="410" y="177" fill="#00e5ff">OS:</text><text x="510" y="177" fill="#e6edf3">Gerson OS 1.0 (Custom Remix)</text>
+      <text x="410" y="207" fill="#00e5ff">Host:</text><text x="510" y="207" fill="#e6edf3">Custom PC</text>
+      <text x="410" y="237" fill="#00e5ff">Kernel:</text><text x="510" y="237" fill="#e6edf3">6.12.0-gerson</text>
+      <text x="410" y="267" fill="#00e5ff">Uptime:</text><text x="510" y="267" fill="#e6edf3">24 mins</text>
+      <text x="410" y="297" fill="#00e5ff">Packages:</text><text x="510" y="297" fill="#e6edf3">1987 (dpkg)</text>
+      <text x="410" y="327" fill="#00e5ff">Shell:</text><text x="510" y="327" fill="#e6edf3">bash 5.2</text>
+      <text x="410" y="357" fill="#00e5ff">Resolution:</text><text x="510" y="357" fill="#e6edf3">1920x1080</text>
+      <text x="410" y="387" fill="#00e5ff">DE:</text><text x="510" y="387" fill="#e6edf3">GNOME</text>
+      <text x="410" y="417" fill="#00e5ff">Theme:</text><text x="510" y="417" fill="#e6edf3">Gerson-Dark</text>
+      <text x="410" y="447" fill="#00e5ff">CPU:</text><text x="510" y="447" fill="#e6edf3">x86_64 Processor</text>
+      <text x="410" y="477" fill="#00e5ff">Memory:</text><text x="510" y="477" fill="#e6edf3">4820MiB / 32768MiB</text>
+    </g>
+    <text x="38" y="840" font-size="18" fill="#00e5ff">gerson@gerson-os:~$</text>
+    <rect x="250" y="823" width="10" height="22" fill="#e6edf3"/>
+  </g>
+
+  <!-- Settings/About window -->
+  <rect x="790" y="38" width="770" height="824" rx="18" fill="url(#panel)" stroke="#284458" stroke-width="2"/>
+  <rect x="790" y="38" width="210" height="824" rx="18" fill="#0c1822"/>
+  <rect x="980" y="38" width="2" height="824" fill="#203545"/>
+
+  <g font-family="DejaVu Sans, sans-serif">
+    <text x="820" y="80" font-size="22" fill="#eaf2f8" font-weight="bold">Settings</text>
+
+    <rect x="805" y="112" width="180" height="48" rx="10" fill="#145f93"/>
+    <text x="835" y="142" font-size="16" fill="#fff">System</text>
+    <text x="835" y="190" font-size="16" fill="#b8c8d4">Bluetooth</text>
+    <text x="835" y="238" font-size="16" fill="#b8c8d4">Network</text>
+    <text x="835" y="286" font-size="16" fill="#b8c8d4">Sound</text>
+    <text x="835" y="334" font-size="16" fill="#b8c8d4">Power</text>
+    <text x="835" y="382" font-size="16" fill="#b8c8d4">Displays</text>
+    <text x="835" y="430" font-size="16" fill="#b8c8d4">Privacy</text>
+    <rect x="805" y="760" width="180" height="48" rx="10" fill="#145f93"/>
+    <text x="835" y="790" font-size="16" fill="#fff">About</text>
+
+    <text x="1015" y="82" font-size="24" fill="#eaf2f8" font-weight="bold">About</text>
+
+    <!-- logo -->
+    <circle cx="1280" cy="185" r="70" fill="none" stroke="url(#g)" stroke-width="10"/>
+    <path d="M1320 155h-62c-30 0-48 20-48 40s18 40 48 40h38v-25h-38c-12 0-20-6-20-15s8-15 20-15h62z" fill="url(#g)"/>
+    <text x="1280" y="290" text-anchor="middle" font-size="32" font-weight="bold" fill="url(#g)">GERSON OS</text>
+    <text x="1280" y="318" text-anchor="middle" font-size="15" fill="#00d9ff">Freedom • Privacy • Performance</text>
+
+    <rect x="1010" y="345" width="515" height="405" rx="14" fill="#0d1b26" stroke="#1d3445"/>
+    <g font-size="16">
+      <text x="1035" y="380" fill="#00e5ff">OS</text><text x="1495" y="380" text-anchor="end" fill="#d9e5ec">Gerson OS 1.0</text>
+      <text x="1035" y="415" fill="#00e5ff">Host</text><text x="1495" y="415" text-anchor="end" fill="#d9e5ec">Custom PC</text>
+      <text x="1035" y="450" fill="#00e5ff">Kernel</text><text x="1495" y="450" text-anchor="end" fill="#d9e5ec">6.12.0-gerson</text>
+      <text x="1035" y="485" fill="#00e5ff">Uptime</text><text x="1495" y="485" text-anchor="end" fill="#d9e5ec">24 mins</text>
+      <text x="1035" y="520" fill="#00e5ff">Packages</text><text x="1495" y="520" text-anchor="end" fill="#d9e5ec">1987 (dpkg)</text>
+      <text x="1035" y="555" fill="#00e5ff">Shell</text><text x="1495" y="555" text-anchor="end" fill="#d9e5ec">bash 5.2</text>
+      <text x="1035" y="590" fill="#00e5ff">Resolution</text><text x="1495" y="590" text-anchor="end" fill="#d9e5ec">1920x1080</text>
+      <text x="1035" y="625" fill="#00e5ff">DE</text><text x="1495" y="625" text-anchor="end" fill="#d9e5ec">GNOME</text>
+      <text x="1035" y="660" fill="#00e5ff">Theme</text><text x="1495" y="660" text-anchor="end" fill="#d9e5ec">Gerson-Dark</text>
+      <text x="1035" y="695" fill="#00e5ff">Architecture</text><text x="1495" y="695" text-anchor="end" fill="#d9e5ec">x86_64</text>
+      <text x="1035" y="730" fill="#00e5ff">License</text><text x="1495" y="730" text-anchor="end" fill="#d9e5ec">Open Source</text>
+    </g>
+
+    <text x="1280" y="805" text-anchor="middle" font-size="14" fill="#00d9ff">Built for a better computing experience.</text>
+    <text x="1280" y="830" text-anchor="middle" font-size="14" fill="#8ea7b8">Gerson OS</text>
+  </g>
+</svg>
